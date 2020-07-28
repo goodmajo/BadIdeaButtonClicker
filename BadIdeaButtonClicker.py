@@ -9,6 +9,7 @@ Description:
 '''
 
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 from time import sleep
 from datetime import datetime
 
@@ -23,8 +24,9 @@ class ButtonClicker:
     print(self.url);
 
   def clickTheButton(self):
-    # This should be headless, but fuck it.
-    wd = webdriver.Firefox()
+    options = Options()
+    options.add_argument('-headless')
+    wd = webdriver.Firefox(executable_path='GeckoDriver', options=options)
     wd.get(self.url)
     the_button = wd.find_element_by_id("redButton") 
     while(True):
