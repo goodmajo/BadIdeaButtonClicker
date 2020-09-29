@@ -22,11 +22,9 @@ from datetime import datetime
 class ButtonClicker:
   click_count = 0
   url = "https://www.servethebutton.com/"
+
   def __init__(self):
     print("ButtonClicker instance created...")
-
-  def printUrl(self):
-    print(self.url);
 
   def clickTheButton(self):
     options = Options()
