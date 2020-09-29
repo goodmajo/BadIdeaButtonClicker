@@ -2,10 +2,15 @@
 '''
 BadIdeaButtonClicker.py
 
-Author:
-  Joel Goodman
-Description:
-  Fuck the police
+Joel Goodman, 2020
+
+@brief:
+Dear Bad Idea,
+
+Release your comics already!
+
+Sincerely,
+  a rule breaker/problem causer
 '''
 
 from selenium import webdriver
@@ -17,6 +22,7 @@ from datetime import datetime
 class ButtonClicker:
   click_count = 0
   url = "https://www.servethebutton.com/"
+  sleep_s = 0.000250
   def __init__(self):
     print("ButtonClicker instance created...")
 
@@ -33,7 +39,7 @@ class ButtonClicker:
       try:
         the_button.click()
         self.click_count += 1
-        sleep(0.000250) # Is this even necessary?
+        sleep(sleep_s) # Is this even necessary?
       except:
         break
 
