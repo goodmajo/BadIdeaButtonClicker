@@ -22,7 +22,6 @@ from datetime import datetime
 class ButtonClicker:
   click_count = 0
   url = "https://www.servethebutton.com/"
-  sleep_s = 0.000250
   def __init__(self):
     print("ButtonClicker instance created...")
 
@@ -39,7 +38,6 @@ class ButtonClicker:
       try:
         the_button.click()
         self.click_count += 1
-        sleep(sleep_s) # Is this even necessary?
       except:
         break
 
